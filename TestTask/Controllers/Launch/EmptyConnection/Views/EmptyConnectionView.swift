@@ -25,6 +25,23 @@ final class EmptyConnectionView: UIView {
         return $0
     }(PrimaryFilledButton(title: "Try again"))
     
+    lazy var spinner: UIActivityIndicatorView = {
+        $0.style = .large
+        $0.center = center
+        addSubview($0)
+        return $0
+    }(UIActivityIndicatorView())
+    
+    lazy var coverView: UIView = {
+        $0.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        $0.isHidden = true
+        addSubview($0)
+        $0.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        return $0
+    }(UIView())
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)

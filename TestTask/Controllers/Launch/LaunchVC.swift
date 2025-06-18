@@ -5,9 +5,9 @@ final class LaunchViewController: UIViewController {
         super.viewDidLoad()
         ConnectivityManager.shared.observeConnectionStatus { [self] isConnected in
             if isConnected {
-                print("true")
-            } else {
                 setRootController(EmptyConnectionViewController())
+            } else {
+
             }
         }
     }

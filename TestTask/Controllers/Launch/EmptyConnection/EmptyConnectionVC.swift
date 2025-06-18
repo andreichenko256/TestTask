@@ -19,8 +19,15 @@ final class EmptyConnectionViewController: UIViewController {
 
 private extension EmptyConnectionViewController {
     func handleTryAgainButtonTapped() {
-        emptyConnectionView.onTapTryAgainButton = {
-            print("tapped")
+        emptyConnectionView.onTapTryAgainButton = { [self] in
+            emptyConnectionView.spinner.startAnimating()
+            emptyConnectionView.coverView.isHidden.toggle()
+            view.isUserInteractionEnabled.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[self] in
+                emptyConnectionView.spinner.stopAnimating()
+                view.isUserInteractionEnabled.toggle()
+                emptyConnectionView.coverView.isHidden.toggle()
+            }
         }
     }
 }
