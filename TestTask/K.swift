@@ -13,6 +13,7 @@ struct K {
         static let disabled = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)
         
         static let black87 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.87)
+        static let black48 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.48)
     }
     
     // MARK: - Fonts

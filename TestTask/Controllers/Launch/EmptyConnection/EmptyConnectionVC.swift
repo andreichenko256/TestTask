@@ -8,9 +8,19 @@ final class EmptyConnectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        handleTryAgainButtonTapped()
     }
     
     override func loadView() {
         view = EmptyConnectionView()
+    }
+}
+
+private extension EmptyConnectionViewController {
+    func handleTryAgainButtonTapped() {
+        emptyConnectionView.onTapTryAgain = {
+            print("tapped")
+        }
     }
 }
