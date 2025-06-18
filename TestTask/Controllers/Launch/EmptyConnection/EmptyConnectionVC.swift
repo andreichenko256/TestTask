@@ -19,7 +19,7 @@ final class EmptyConnectionViewController: UIViewController {
 
 private extension EmptyConnectionViewController {
     func handleTryAgainButtonTapped() {
-        emptyConnectionView.onTapTryAgain = {
+        emptyConnectionView.onTapTryAgainButton = {
             print("tapped")
         }
     }

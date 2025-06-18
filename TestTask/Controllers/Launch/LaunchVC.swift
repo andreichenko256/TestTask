@@ -1,15 +1,14 @@
 import UIKit
 
 final class LaunchViewController: UIViewController {
-    
-    let isConnectedToInternet: Bool = false
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if !isConnectedToInternet {
-            let emptyVC = EmptyConnectionViewController()
-            setRootController(emptyVC)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ConnectivityManager.shared.observeConnectionStatus { [self] isConnected in
+            if isConnected {
+                print("true")
+            } else {
+                setRootController(EmptyConnectionViewController())
+            }
         }
     }
     
