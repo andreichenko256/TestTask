@@ -18,6 +18,10 @@ struct K {
         // TabBar Colors
         static let tabBarBackground = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
         static let black60 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.6)
+        
+        // Main View Colors
+        static let topBarText = UIColor(red: 29/255, green: 27/255, blue: 32/255, alpha: 1)
+        
     }
     
     // MARK: - Fonts

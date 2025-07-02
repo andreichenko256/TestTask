@@ -34,8 +34,6 @@ private extension CustomTabBarViewController {
     }
     
     func handleTabSelection(tab: Tabs) {
-
-        
         customTabBarView.setActiveTab(tab)
         
         switch tab {
