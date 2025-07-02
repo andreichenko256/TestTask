@@ -1,6 +1,12 @@
 import UIKit
 
+protocol EmptyConnectionViewControllerDelegate: AnyObject {
+    func didTapTryAgainButton()
+}
+
 final class EmptyConnectionViewController: UIViewController {
+    
+    weak var delegate: EmptyConnectionViewControllerDelegate?
     
     var emptyConnectionView: EmptyConnectionView {
         return view as! EmptyConnectionView
@@ -23,6 +29,7 @@ private extension EmptyConnectionViewController {
             emptyConnectionView.spinner.startAnimating()
             emptyConnectionView.coverView.isHidden.toggle()
             view.isUserInteractionEnabled.toggle()
+            delegate?.didTapTryAgainButton()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[self] in
                 emptyConnectionView.spinner.stopAnimating()
                 view.isUserInteractionEnabled.toggle()

@@ -14,6 +14,10 @@ struct K {
         
         static let black87 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.87)
         static let black48 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.48)
+        
+        // TabBar Colors
+        static let tabBarBackground = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1)
+        static let black60 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.6)
     }
     
     // MARK: - Fonts
