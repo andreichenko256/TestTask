@@ -4,6 +4,8 @@ struct K {
     struct API {
         static let baseURL = "https://frontend-test-assignment-api.abz.agency"
         static let usersPath = "/api/v1/users"
+        static let positionsPath = "/api/v1/positions"
+        static let positionsURL = "\(baseURL)\(positionsPath)"
         
         static func usersURL(page: Int = 1, count: Int = 6) -> String {
             return "\(baseURL)\(usersPath)?page=\(page)&count=\(count)"
@@ -15,7 +17,7 @@ struct K {
         static let primary = UIColor(red: 244/255, green: 224/255, blue: 65/255, alpha: 1)
         static let secondary = UIColor(red: 0/255, green: 189/255, blue: 211/255, alpha: 1)
         static let background = UIColor.white
-        
+        static let border = UIColor(red: 208/255, green: 207/255, blue: 207/255, alpha: 1)
         // Buttons colors
         static let pressed = UIColor(red: 255/255, green: 199/255, blue: 0/255, alpha: 1)
         static let disabled = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)

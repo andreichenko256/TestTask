@@ -7,7 +7,6 @@ final class NetworkManager {
 
     func fetchUsers(page: Int, count: Int, completion: @escaping (Result<[User], Error>) -> Void) {
         let url = K.API.usersURL(page: page, count: count)
-        print("Requesting URL: \(url)")
         AF.request(url).responseDecodable(of: UsersResponse.self) { response in
             switch response.result {
             case .success(let response):
@@ -15,6 +14,13 @@ final class NetworkManager {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func fetchPositions() {
+        print(K.API.positionsURL)
+        AF.request(K.API.positionsURL).responseDecodable(of: PositionResponse.self) { response in
+            print(response.result)
         }
     }
 }

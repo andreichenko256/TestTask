@@ -64,14 +64,13 @@ extension UsersViewController: UITableViewDataSource {
 
 extension UsersViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // fetchUsers(page: currentPage) // Disabled to prevent fetching during scroll
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let frameHeight = scrollView.frame.size.height
-        if offsetY > contentHeight - frameHeight * 1.5, !isLoading {
+        
+        let overscrollTriggerOffset: CGFloat = 100
+
+        if offsetY > contentHeight - frameHeight + overscrollTriggerOffset, !isLoading {
             fetchUsers(page: currentPage)
         }
     }
